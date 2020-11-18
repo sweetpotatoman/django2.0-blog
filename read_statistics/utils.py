@@ -16,9 +16,9 @@ def read_statistics_once_read(request, obj):
         # else:
         #     # 不存在对应的记录
         #     readnum = ReadNum(content_type=ct, object_id=obj.pk)
+
         # 总阅读数 +1
         readnum, created = ReadNum.objects.get_or_create(content_type=ct, object_id=obj.pk)
-
         readnum.read_num += 1
         readnum.save()
 
@@ -27,6 +27,8 @@ def read_statistics_once_read(request, obj):
         #     readDetail = ReadDetail.objects.get(content_type=ct, object_id=obj.pk, date=date)
         # else:
         #     readDetail = ReadDetail(content_type=ct, object_id=obj.pk, date=date)
+
+        # 当天阅读数 +1
         readDetail, created = ReadDetail.objects.get_or_create(content_type=ct, object_id=obj.pk, date=date)
         readDetail.read_num += 1
         readDetail.save()
