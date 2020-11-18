@@ -1,5 +1,6 @@
 django==2.2.13
 pytz==2020.4
 sqlparse==0.4.1
+pillow==8.0.1
 django-ckeditor
 mysqlclient

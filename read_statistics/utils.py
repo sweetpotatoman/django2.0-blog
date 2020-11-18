@@ -27,7 +27,7 @@ def read_statistics_once_read(request, obj):
         #     readDetail = ReadDetail.objects.get(content_type=ct, object_id=obj.pk, date=date)
         # else:
         #     readDetail = ReadDetail(content_type=ct, object_id=obj.pk, date=date)
-        readDetail, createed = ReadDetail.objects.get_or_create(content_type=ct, object_id=obj.pk, date=date)
+        readDetail, created = ReadDetail.objects.get_or_create(content_type=ct, object_id=obj.pk, date=date)
         readDetail.read_num += 1
         readDetail.save()
     return key
