@@ -13,7 +13,8 @@
                 "runserver"
             ],
             "django": true,
-            "console": "internalConsole"
+            "console": "internalConsole",
+            "envFile": "${workspaceFolder}/venv"
         }
     ]
 }
